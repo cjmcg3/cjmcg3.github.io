@@ -1,18 +1,72 @@
- <div class="container">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>IP + Name Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f3f3;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 500px;
+        margin: 60px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        margin-top: 0;
+        text-align: center;
+      }
+      .searchContainer {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .input {
+        flex: 1;
+        padding: 8px;
+        font-size: 16px;
+      }
+      #searchBtn {
+        padding: 8px 16px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #exampleContainer {
+        margin-top: 16px;
+      }
+      #errorMessage {
+        margin-top: 8px;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
       <h1>HTML Code</h1>
       <div class="searchContainer">
         <input
           class="input"
-          id="name"
+          id="nameInput"
           placeholder="Enter your name to access site"
           type="text"
         />
-        <button id="searchBtn">Search</button>
+        <button id="searchBtn">Submit</button>
       </div>
+
       <div id="exampleContainer">
-        <h2 id="name"></h2>
+        <h2 id="nameDisplay"></h2>
         <p id="age"></p>
       </div>
+
       <p id="errorMessage"></p>
     </div>
-    <script src="script.js"></script>
+    <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+  </body>
+</html>
